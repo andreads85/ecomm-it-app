@@ -20,7 +20,8 @@ class CreateProductsTable extends Migration
             $table->decimal('price', 9, 2);
             $table->integer('quantity');
             $table->string('image', 200);
-            $table->timestamps();
+            $table->timestamp('updated_at')->useCurrent();
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 

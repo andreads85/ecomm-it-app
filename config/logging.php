@@ -113,6 +113,16 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+
+        'cart_creations' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/new_carts.log'),
+        ],
+
+        'cart_mods' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/cart_mods.log'),
+        ],
     ],
 
 ];

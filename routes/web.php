@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::get('/dashboard', 'App\Http\Controllers\ProductController@index')->name('dashboard');
     Route::post('/products/add_to_cart', 'App\Http\Controllers\ProductController@addToCart')->name('addToCart');
+    Route::post('/products/remove_from_cart', 'App\Http\Controllers\ProductController@removeFromCart')->name('removeFromCart');
     Route::get('/cart', 'App\Http\Controllers\CartController@show')->name('cart_detail');
 });
 
