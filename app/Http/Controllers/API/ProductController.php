@@ -20,7 +20,13 @@ class ProductController extends Controller
         $products = Product::all();
         return response()->json($products);
     }
-
+    
+    /**
+     * Add a product to cart user
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
     public function addToCart(Request $request)
     {
         $validatedData = $request->validate([
@@ -59,7 +65,13 @@ class ProductController extends Controller
             'product_name' => Product::where('id', $product_id)->first()->name
         ]);
     }
-
+    
+    /**
+     * Remove a product from cart user
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
     public function removeFromCart(Request $request)
     {
         $validatedData = $request->validate([
